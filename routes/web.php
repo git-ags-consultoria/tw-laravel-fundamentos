@@ -20,10 +20,11 @@ Route::get('/', function () {
 
 */
 
+/*
 Route::get('/contato', function () {
     echo "Estou na página de contato";
 });
-
+*/
 
 /*
 
@@ -73,3 +74,11 @@ Route::get('/sobre',[SiteController::class, 'sobre']);
 */
 
 Route::get('/servico/{id?}',  MostrarServicos::class);
+
+
+/*
+
+## Aula criando as primeiras views
+
+*/
+Route::get('/contato',[SiteController::class, 'contato']);

@@ -14,13 +14,24 @@ class SiteController extends Controller
 
     */
 
-    public function home()
-    {
-        echo "Estou na home usando controller";
-    }
-
     public function sobre()
     {
         echo "Estou na sobre usando controller";
+    }
+
+    /*
+
+    ## Aula criando as primeiras views
+
+    */
+
+    public function home()
+    {
+        return view('home');
+    }
+
+    public function contato()
+    {
+        return view('contato');
     }
 }
