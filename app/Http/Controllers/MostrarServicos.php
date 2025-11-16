@@ -27,7 +27,12 @@ class MostrarServicos extends Controller
         ];
 
         $servico = $servicos[$id] ?? 'Serviço não encontrado!';
+        /*
 
-        echo $servico;
+            ## Passando dados do controller para a view
+            
+        */
+
+        return view('servicos', ['servico' => $servico]);
     }
 }
