@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,17 +15,9 @@ Route::get('/', function () {
 
 /*
 
-## Aula COnhecendo o conceito de rotas
+## Aula Conhecendo o conceito de rotas
 
 */
-
-Route::get('/', function () {
-    echo "Estou na home";
-});
-
-Route::get('/sobre', function () {
-    echo "Estou na página sobre";
-});
 
 Route::get('/contato', function () {
     echo "Estou na página de contato";
@@ -33,7 +26,7 @@ Route::get('/contato', function () {
 
 /*
 
-## Trabalhando com parâmetros dinâmicos nas rotas
+## Aula Trabalhando com parâmetros dinâmicos nas rotas
 
 */
 
@@ -55,3 +48,16 @@ Route::get('/servico/{id?}', function ($id = null) {
 
     echo $servico;
 });
+
+
+
+/*
+
+## Aula Trabalhando com controllers nas rotas
+
+*/
+
+Route::get('/', [App\Http\Controllers\SiteController::class, 'home']);
+
+//utilizando namespace no topo do arquivo
+Route::get('/sobre',[SiteController::class, 'sobre']);
