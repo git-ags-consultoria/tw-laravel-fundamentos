@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MostrarServicos;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,9 +31,10 @@ Route::get('/contato', function () {
 
 */
 
-
+/*
 Route::get('/servico/{id?}', function ($id = null) {
 
+   
     if (!$id) {
         echo "Serviço não informado!";
         return;
@@ -47,8 +49,9 @@ Route::get('/servico/{id?}', function ($id = null) {
     $servico = $servicos[$id] ?? 'Serviço não encontrado!';
 
     echo $servico;
+    
 });
-
+*/
 
 
 /*
@@ -61,3 +64,12 @@ Route::get('/', [App\Http\Controllers\SiteController::class, 'home']);
 
 //utilizando namespace no topo do arquivo
 Route::get('/sobre',[SiteController::class, 'sobre']);
+
+
+/*
+
+## Aula Single Action Controller --invokable controller
+
+*/
+
+Route::get('/servico/{id?}',  MostrarServicos::class);
