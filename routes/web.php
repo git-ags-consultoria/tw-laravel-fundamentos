@@ -26,10 +26,32 @@ Route::get('/sobre', function () {
     echo "Estou na página sobre";
 });
 
-Route::get('/servicos', function () {
-    echo "Estou na página de serviços";
-});
-
 Route::get('/contato', function () {
     echo "Estou na página de contato";
+});
+
+
+/*
+
+## Trabalhando com parâmetros dinâmicos nas rotas
+
+*/
+
+
+Route::get('/servico/{id?}', function ($id = null) {
+
+    if (!$id) {
+        echo "Serviço não informado!";
+        return;
+    }
+
+    $servicos = [
+        1 => 'Detalhes do Serviço de php',
+        2 => 'Detalhes do Serviço de html',
+        3 => 'Detalhes do Serviço de css'
+    ];
+
+    $servico = $servicos[$id] ?? 'Serviço não encontrado!';
+
+    echo $servico;
 });
