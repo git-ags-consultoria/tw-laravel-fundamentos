@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MostrarServicos;
 use App\Http\Controllers\SiteController;
+use App\Models\Client;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,7 +65,7 @@ Route::get('/servico/{id?}', function ($id = null) {
 Route::get('/', [App\Http\Controllers\SiteController::class, 'home']);
 
 //utilizando namespace no topo do arquivo
-Route::get('/sobre',[SiteController::class, 'sobre']);
+Route::get('/sobre', [SiteController::class, 'sobre']);
 
 
 /*
@@ -81,4 +82,14 @@ Route::get('/servico/{id?}',  MostrarServicos::class);
 ## Aula criando as primeiras views
 
 */
-Route::get('/contato',[SiteController::class, 'contato']);
+Route::get('/contato', [SiteController::class, 'contato']);
+
+
+/*
+
+## Aula criando o primeiro model e obtendo dados do banco de dados
+
+*/
+Route::get('/clientes', function () {
+    var_dump(Client::get());
+});

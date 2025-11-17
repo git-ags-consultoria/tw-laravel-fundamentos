@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <!-- Passando dados do controller para a view -->
+    <!-- Aula passando dados do controller para a view -->
     <h1>Detalhes do Serviço:</h1>
     <p>Valor que será dinâmico</p>
     <p>{{ $servico }}</p>
