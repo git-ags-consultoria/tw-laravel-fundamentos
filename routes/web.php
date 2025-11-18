@@ -99,8 +99,17 @@ Route::get('/clientes', function () {
 
 /*
 
-## Exibindo as informações de maneira legível
+## Aula exibindo as informações de maneira legível
 
 */
 
 Route::get('/clientes', [ClientController::class, 'index']);
+
+
+/*
+
+## Aula criando página de cadastro de clientes
+
+*/
+Route::get('/clientes/criar', [ClientController::class, 'create']);
+Route::post('/clientes', [ClientController::class, 'store']);

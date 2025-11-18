@@ -11,7 +11,7 @@
 
     <nav class="bg-gray-200">
         <div class="container mx-auto">
-            <div class="flex items-center justify-between p-6" >
+            <div class="flex items-center justify-between p-6">
                 <a class="text-3xl font-bold" href="#">LOGOMARCA</a>
                 <ul class="flex space-x-4">
                     <li><a href="#">Clientes</a></li>
@@ -22,17 +22,51 @@
         </div>
     </nav>
 
-    <h1 class="text-3xl font-bold underline bg-gray-400">
-        Cadastro de Clientes
-    </h1>
-
-    @foreach ($clients as $client)
-        <div class="client-card">
-            <h2>{{ $client->nome }}</h2>
-            <p>Endereço: {{ $client->endereco }}</p>
-            <p>Descrição: {{ $client->descricao }}</p>
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center my-4">
+            Lista de Clientes
+        </h1>
+        
+        <div class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default">
+            <table class="w-full text-sm text-left rtl:text-right text-body">
+                <thead class="text-sm text-body bg-neutral-secondary-medium border-b border-default-medium">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 font-medium">
+                            Nome
+                        </th>
+                        <th scope="col" class="px-6 py-3 font-medium">
+                            Endereço
+                        </th>
+                        <th scope="col" class="px-6 py-3 font-medium">
+                            Descrição
+                        </th>
+                        <th scope="col" class="px-6 py-3 font-medium">
+                            <span class="sr-only">Edit</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($clients as $client)
+                        <tr class="bg-neutral-primary-soft border-b border-default hover:bg-neutral-secondary-medium">
+                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
+                                {{ $client->nome }}
+                            </th>
+                            <td class="px-6 py-4">
+                                {{ $client->endereco }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $client->descricao }}
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <a href="#" class="font-medium text-fg-brand hover:underline">Edit</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
-    @endforeach
+    </div>
+
 </body>
 
 </html>

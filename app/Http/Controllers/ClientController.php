@@ -21,4 +21,9 @@ class ClientController extends Controller
            'clients' => $clients
        ]);
     }
+
+    public function create()
+    {
+        return view('clients.create');
+    }
 }
