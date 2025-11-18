@@ -12,9 +12,9 @@
     <nav class="bg-gray-200">
         <div class="container mx-auto">
             <div class="flex items-center justify-between p-6">
-                <a class="text-3xl font-bold" href="#">LOGOMARCA</a>
+                <a class="text-3xl font-bold" href="/">LOGOMARCA</a>
                 <ul class="flex space-x-4">
-                    <li><a href="#">Clientes</a></li>
+                    <li><a href="/clientes">Clientes</a></li>
                     <li><a href="#">Produtos</a></li>
                     <li><a href="#">Pedidos</a></li>
                 </ul>
