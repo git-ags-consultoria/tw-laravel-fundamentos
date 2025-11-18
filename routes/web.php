@@ -112,4 +112,11 @@ Route::get('/clientes', [ClientController::class, 'index']);
 
 */
 Route::get('/clientes/criar', [ClientController::class, 'create']);
+
+
+/*
+
+## Aula obtendo informações da requesta e salvando no banco de dados
+
+*/
 Route::post('/clientes', [ClientController::class, 'store']);

@@ -28,26 +28,27 @@
         </h1>
 
 
-        <form class="max-w-6xl mx-auto">
+        <form method="post" action="/clientes" class="max-w-6xl mx-auto">
+            @csrf
             <div class="mb-5">
                 <label for="nome" class="block mb-2.5 text-sm font-medium text-heading">Nome</label>
-                <input type="text" id="nome"
+                <input type="text" id="nome" name="nome"
                     class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
-                    placeholder="Nome do Cliente" required />
+                    placeholder="Nome do cliente" required />
             </div>
 
             <div class="mb-5">
                 <label for="endereco" class="block mb-2.5 text-sm font-medium text-heading">Endereço</label>
-                <input type="text" id="endereco"
+                <input type="text" id="endereco" name="endereco"
                     class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                     placeholder="Endereço do cliente" required />
             </div>
 
             <div class="mb-5">
                 <label for="descricao" class="block mb-2.5 text-sm font-medium text-heading">Descrição</label>
-                <input type="textarea" id="descricao"
+                <input type="textarea" id="descricao" name="descricao"
                     class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
-                    placeholder="Descrição do CLiente" required />
+                    placeholder="Descrição do cliente" required />
             </div>
             
             <button type="submit"

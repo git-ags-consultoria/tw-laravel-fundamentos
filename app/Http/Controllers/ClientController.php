@@ -17,13 +17,35 @@ class ClientController extends Controller
     {
         $clients = Client::all();
 
-       return view('clients.index', [
-           'clients' => $clients
-       ]);
+        return view('clients.index', [
+            'clients' => $clients
+        ]);
     }
 
+    /*
+
+## Aula criando página de cadastro de clientes
+
+*/
     public function create()
     {
         return view('clients.create');
+    }
+
+
+    /*
+
+    ## Aulas obtendo informações da requesta e salvando no banco de dados e criando o registro no banco de dados
+
+    */
+    public function store(Request $request)
+    {
+        $client = new Client();
+        $client->nome = $request->nome;
+        $client->endereco = $request->endereco;
+        $client->descricao = $request->descricao;
+        $client->save();
+
+        return redirect('/clientes');
     }
 }
