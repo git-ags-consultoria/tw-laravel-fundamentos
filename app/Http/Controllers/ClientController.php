@@ -40,6 +40,18 @@ class ClientController extends Controller
     */
     public function store(Request $request)
     {
+
+        /*
+
+        ## Aulas Validando dados recebidos da request
+
+        */
+        $request->validate([
+            'nome' => 'required|string|min:5|max:100',
+            'endereco' => 'required|string|max:150',
+            'descricao' => 'nullable|string',
+        ]);
+
         $client = new Client();
         $client->nome = $request->nome;
         $client->endereco = $request->endereco;
