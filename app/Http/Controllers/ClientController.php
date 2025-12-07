@@ -52,12 +52,21 @@ class ClientController extends Controller
             'descricao' => 'nullable|string',
         ]);
 
+
+        /*
+
+        ## Aulas usando definição de dados em massa na prática
+
+        */
+        Client::create($request->except('_token'));
+
+    /*
         $client = new Client();
         $client->nome = $request->nome;
         $client->endereco = $request->endereco;
         $client->descricao = $request->descricao;
         $client->save();
-
+    */
         return redirect('/clientes');
     }
 }
